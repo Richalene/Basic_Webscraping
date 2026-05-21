@@ -1,6 +1,6 @@
-# Starlink Web Scraper + Data Analytics
+# Starlink Data Scraper
 
-A Selenium-based tool that extracts daily Starlink usage data from your logged-in account session via Chrome remote debugging, then processes it with pandas and exports basic reports.
+A Selenium-based tool that extracts daily Starlink usage data from your logged-in account session via Chrome remote debugging, then processes it with pandas and exports structured reports.
 
 ---
 
@@ -9,41 +9,12 @@ A Selenium-based tool that extracts daily Starlink usage data from your logged-i
 - Python 3.8+
 - Google Chrome (latest recommended)
 - ChromeDriver matching your Chrome version — [download here](https://chromedriver.chromium.org)
-- An active internet connection with a logged-in Starlink session
-
----
-
-## Installation
-
-### 1. Set up the project
-
-Place all files in a single folder:
-
-```
-starlink-scraper/
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-**`requirements.txt`**
-
-```
-pandas
-selenium
-jupyter
-```
 
 ---
 
 ## Usage
 
-Double-click **`run_scraper.bat`** to start.
-
-> Make sure you're already logged in to your Starlink account in Chrome before running.
+Double-click **`run_scraper.bat`** and hopefully it just works.
 
 ---
 
