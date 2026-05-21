@@ -30,7 +30,7 @@ start chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chrome-debug
  
 ### 2. Log in to Starlink
  
-In that Chrome window, go to [starlink.com](https://starlink.com) and log in to your account. Navigate to the data usage page for your service line.
+In that Chrome window, go to [starlink.com](https://starlink.com) and log in to your account. Once logged in go into My Subscriptions.
  
 ### 3. Run the notebook
  
