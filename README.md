@@ -1,6 +1,6 @@
 # BASIC STARLINK WEB SCRAPER
  
-Extracts daily data usage from a Starlink account page using Selenium and exports it to CSV with full data analysis using pandas.
+Extracts daily data usage from a Starlink account page using Selenium and exports it to CSV with data analysis using pandas.
  
 ---
  
