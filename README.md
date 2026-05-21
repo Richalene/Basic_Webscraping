@@ -39,7 +39,7 @@ CSV files + reports exported
 ## Project Structure
 
 ```
-starlink-scraper/
+Basic_Webscraping/
 ├── starlink_scraper.py        # Main script
 ├── starlink_scraper.ipynb     # Notebook version
 ├── run_starlink.bat           # One-click runner (Windows)
