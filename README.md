@@ -1,112 +1,77 @@
-# BASIC STARLINK WEB SCRAPER
- 
-Extracts daily data usage from a Starlink account page using Selenium and exports it to CSV with full data analysis using pandas.
- 
+# Starlink Web Scraper
+
+A Selenium-based tool that extracts daily Starlink usage data from your logged-in account session via Chrome remote debugging, then processes it with pandas and exports basic reports.
+
 ---
- 
+
 ## Requirements
- 
+
 - Python 3.8+
-- Google Chrome
-- ChromeDriver (matching your Chrome version)
-- Dependencies listed in `requirements.txt`
-Install dependencies:
- 
-```bash
-pip install -r requirements.txt
-```
- 
+- Google Chrome (latest recommended)
+- ChromeDriver matching your Chrome version — [download here](https://chromedriver.chromium.org)
+
 ---
- 
+
 ## Usage
- 
-### 1. Launch Chrome with remote debugging
- 
-Open a terminal and type:
- 
-```bash
-start chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chrome-debug
-```
- 
-### 2. Log in to Starlink
- 
-In that Chrome window, go to [starlink.com](https://starlink.com) and log in to your account. Once logged in go into My Subscriptions.
- 
-### 3. Run the notebook
- 
-```bash
-jupyter notebook starlink_scraper.ipynb
-```
- 
-Execute all cells in order. When prompted, confirm the browser is on the correct page before continuing.
- 
+
+Double-click **`run_scraper.bat`**
+
 ---
- 
-## How it works
- 
-The notebook attaches to the open Chrome session via remote debugging and calls the Starlink internal API endpoint directly using the browser's authenticated cookies — no password handling in code.
- 
+
+## How It Works
+
+The scraper attaches to an existing Chrome session via Selenium's remote debugging mode. This approach avoids storing credentials in code — you log in manually, and the scraper piggybacks on your live session.
+
 ```
-Chrome (logged in) → Selenium attaches → JS fetch to API → JSON → pandas → CSV + report
+Chrome (logged-in session)
+        ↓
+Selenium attaches via remote debugging
+        ↓
+Extracts usage data from DOM / session
+        ↓
+pandas processes the data
+        ↓
+CSV files + reports exported
 ```
- 
+
 ---
- 
+
+## Project Structure
+
+```
+Basic_Webscraping/
+├── starlink_scraper.py        # Main script
+├── starlink_scraper.ipynb     # Notebook version
+├── run_starlink.bat           # One-click runner (Windows)
+├── requirements.txt           # Python dependencies
+├── README.md                  # Documentation
+└── data/                      # Output files
+```
+
+---
+
 ## Output Files
- 
+
 | File | Description |
-|------|-------------|
-| `starlink_data.json` | Raw API response saved as backup |
-| `starlink_daily_usage.csv` | Daily usage with date, day of week, week, and month |
-| `starlink_weekly_summary.csv` | Total GB per week |
-| `starlink_monthly_summary.csv` | Monthly totals, averages, min/max |
+|---|---|
+| `starlink_data.json` | Raw extracted data backup |
+| `starlink_daily_usage.csv` | Daily usage breakdown |
+| `starlink_weekly_summary.csv` | Weekly totals |
+| `starlink_monthly_summary.csv` | Monthly statistics |
 | `starlink_usage_report.txt` | Full analysis report |
- 
----
- 
-## Data Analysis
- 
-The notebook performs the following analysis on the scraped data:
- 
-**Overall statistics**
-- Total days analyzed, total GB used
-- Average, median, max, min daily usage
-- Standard deviation
-**Top 5 highest usage days**
-- Date, day of week, and GB for the 5 heaviest usage days
-**Day of week patterns**
-- Average daily usage broken down by Monday–Sunday
-- Useful for identifying weekly usage habits
-**Weekly summary**
-- Total GB consumed per ISO week across all billing cycles
-- Deduplicated across billing cycle boundaries
-**Monthly report**
-- Per-month breakdown of total, average, peak, and lowest daily usage
-- Days recorded per month
-- Grand total across all months
----
- 
-## Output Format
- 
-`starlink_daily_usage.csv` sample:
- 
+| `starlink_raw_export.txt` | Raw extracted text |
+
+### Sample — `starlink_daily_usage.csv`
+
 | date | day_of_week | week | month | usage_gb |
-|------|-------------|------|-------|----------|
+|---|---|---|---|---|
 | 2025-11-17 | Monday | 2025-W47 | 2025-11 | 17.49 |
 | 2025-11-18 | Tuesday | 2025-W47 | 2025-11 | 13.31 |
- 
+
 ---
- 
-## requirements.txt
- 
-```
-pandas
-jupyter
-selenium
-```
- 
----
- 
+
 ## Notes
- 
-- ChromeDriver version must match your installed Chrome version — download from [chromedriver.chromium.org](https://chromedriver.chromium.org).
+
+- **ChromeDriver version must match your Chrome version.** Mismatches will cause the scraper to fail.
+- **Do not close the Chrome debugging window** while the scraper is running.
+- **Log in before running the script.** The scraper relies on your active session and has no credential handling of its own.
