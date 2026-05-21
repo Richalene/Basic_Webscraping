@@ -1,72 +1,112 @@
-# Basic Webscraping 
-
-Extracts daily data usage from a Starlink account page and exports it to CSV using Python and pandas.
-
+# BASIC STARLINK WEB SCRAPER
+ 
+Extracts daily data usage from a Starlink account page using Selenium and exports it to CSV with full data analysis using pandas.
+ 
 ---
-
+ 
 ## Requirements
-
+ 
 - Python 3.8+
+- Google Chrome
+- ChromeDriver (matching your Chrome version)
 - Dependencies listed in `requirements.txt`
-
 Install dependencies:
-
+ 
 ```bash
 pip install -r requirements.txt
 ```
-
+ 
 ---
-
+ 
 ## Usage
-
-1. Clone the repo:
-
+ 
+### 1. Launch Chrome with remote debugging
+ 
+Open a terminal and type:
+ 
 ```bash
-git clone <your-repo-url>
-cd <repo-folder>
+start chrome.exe --remote-debugging-port=9222 --user-data-dir=C:\chrome-debug
 ```
-
-2. Place your `starlink_data.json` file in the root directory (exported from the Starlink usage page).
-
-3. Run the notebook:
-
+ 
+### 2. Log in to Starlink
+ 
+In that Chrome window, go to [starlink.com](https://starlink.com) and log in to your account. Navigate to the data usage page for your service line.
+ 
+### 3. Run the notebook
+ 
 ```bash
-jupyter notebook starlink_analysis.ipynb
+jupyter notebook starlink_scraper.ipynb
 ```
-
-4. Execute all cells. The following output files will be generated:
-
+ 
+Execute all cells in order. When prompted, confirm the browser is on the correct page before continuing.
+ 
+---
+ 
+## How it works
+ 
+The notebook attaches to the open Chrome session via remote debugging and calls the Starlink internal API endpoint directly using the browser's authenticated cookies — no password handling in code.
+ 
+```
+Chrome (logged in) → Selenium attaches → JS fetch to API → JSON → pandas → CSV + report
+```
+ 
+---
+ 
+## Output Files
+ 
 | File | Description |
 |------|-------------|
-| `starlink_daily_usage.csv` | Daily data usage with date, day of week, week, and month |
+| `starlink_data.json` | Raw API response saved as backup |
+| `starlink_daily_usage.csv` | Daily usage with date, day of week, week, and month |
 | `starlink_weekly_summary.csv` | Total GB per week |
 | `starlink_monthly_summary.csv` | Monthly totals, averages, min/max |
-| `starlink_usage_report.txt` | Full stats report including top 5 usage days |
-
+| `starlink_usage_report.txt` | Full analysis report |
+ 
 ---
-
+ 
+## Data Analysis
+ 
+The notebook performs the following analysis on the scraped data:
+ 
+**Overall statistics**
+- Total days analyzed, total GB used
+- Average, median, max, min daily usage
+- Standard deviation
+**Top 5 highest usage days**
+- Date, day of week, and GB for the 5 heaviest usage days
+**Day of week patterns**
+- Average daily usage broken down by Monday–Sunday
+- Useful for identifying weekly usage habits
+**Weekly summary**
+- Total GB consumed per ISO week across all billing cycles
+- Deduplicated across billing cycle boundaries
+**Monthly report**
+- Per-month breakdown of total, average, peak, and lowest daily usage
+- Days recorded per month
+- Grand total across all months
+---
+ 
 ## Output Format
-
+ 
 `starlink_daily_usage.csv` sample:
-
+ 
 | date | day_of_week | week | month | usage_gb |
 |------|-------------|------|-------|----------|
 | 2025-11-17 | Monday | 2025-W47 | 2025-11 | 17.49 |
 | 2025-11-18 | Tuesday | 2025-W47 | 2025-11 | 13.31 |
-
+ 
 ---
-
-## Requirements.txt
-
+ 
+## requirements.txt
+ 
 ```
 pandas
 jupyter
+selenium
 ```
-
+ 
 ---
-
+ 
 ## Notes
-
-- Zero-usage days (future dates) are automatically excluded from analysis.
-- Weekly totals are deduplicated across billing cycle boundaries.
-- All timestamps are handled in UTC to avoid timezone offset issues.
+ 
+- ChromeDriver version must match your installed Chrome version — download from [chromedriver.chromium.org](https://chromedriver.chromium.org).
