@@ -15,6 +15,15 @@ Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
+ ---
+ 
+## requirements.txt
+ 
+```
+pandas
+jupyter
+selenium
+```
  
 ---
  
@@ -76,16 +85,7 @@ Chrome (logged in) → Selenium attaches → JS fetch to API → JSON → pandas
 | 2025-11-17 | Monday | 2025-W47 | 2025-11 | 17.49 |
 | 2025-11-18 | Tuesday | 2025-W47 | 2025-11 | 13.31 |
  
----
- 
-## requirements.txt
- 
-```
-pandas
-jupyter
-selenium
-```
- 
+
 ---
  
 ## Notes
