@@ -1,6 +1,6 @@
-# Starlink Data Scraper
+# Starlink Web Scraper
 
-A Selenium-based tool that extracts daily Starlink usage data from your logged-in account session via Chrome remote debugging, then processes it with pandas and exports structured reports.
+A Selenium-based tool that extracts daily Starlink usage data from your logged-in account session via Chrome remote debugging, then processes it with pandas and exports basic reports.
 
 ---
 
@@ -14,7 +14,7 @@ A Selenium-based tool that extracts daily Starlink usage data from your logged-i
 
 ## Usage
 
-Double-click **`run_scraper.bat`** and hopefully it just works.
+Double-click **`run_scraper.bat`**
 
 ---
 
