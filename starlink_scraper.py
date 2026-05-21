@@ -21,7 +21,7 @@ print(f"Connected to: {driver.current_url}")
 # Fetch data
 raw_data = driver.execute_async_script("""
     const callback = arguments[arguments.length - 1];
-    fetch('/api/telemetryagg/v1/data-usage/account/ACC-2735603-74738-20/service-line/AST-2293597-46342-54/annotated', {
+    fetch('https://starlink.com/api/telemetryagg/v1/data-usage/account/ACC-2735603-74738-20/service-line/AST-2293597-46342-54/annotated', {
         credentials: 'include'
     })
     .then(r => r.json())
@@ -136,7 +136,7 @@ with open('data/starlink_usage_report.txt', 'w', encoding='utf-8') as f:
         f.write(f"  Peak Day:       {row['max_daily_gb']} GB\n")
         f.write(f"  Lowest Day:     {row['min_daily_gb']} GB\n")
         f.write(f"  Days Recorded:  {int(row['days_count'])}\n")
-    
+
     f.write('\n' + '=' * 60 + '\n')
     f.write(f"Grand Total: {monthly['total_gb'].sum().round(2)} GB across {len(monthly)} months\n")
     f.write('\n' + '=' * 60 + '\n')
@@ -144,12 +144,12 @@ with open('data/starlink_usage_report.txt', 'w', encoding='utf-8') as f:
 
 print("Report saved: data/starlink_usage_report.txt")
 
-# Export raw data as CSV (optional cell you requested)
+# Export raw data as CSV
 raw_df = pd.DataFrame([{
     'date': pd.to_datetime(cycle['startDate'].split('T')[0]) + pd.Timedelta(days=i),
     'usage_gb': usage_array[0] if usage_array else None
-} for cycle in billing_cycles 
-  for i, usage_array in enumerate(cycle['dailyData']) 
+} for cycle in billing_cycles
+  for i, usage_array in enumerate(cycle['dailyData'])
   if usage_array], columns=['date', 'usage_gb'])
 
 raw_df.to_csv('data/starlink_raw_export.csv', index=False)
@@ -158,6 +158,3 @@ print(f"Raw data exported: {len(raw_df)} records to data/starlink_raw_export.csv
 # Close browser connection
 driver.quit()
 print("\nBrowser connection closed.")
-print("\n" + "="*40)
-print("ALL DONE! Check the /data folder for outputs")
-print("="*40)

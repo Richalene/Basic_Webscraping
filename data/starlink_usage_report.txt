@@ -5,8 +5,8 @@ STARLINK DATA USAGE ANALYSIS REPORT
 OVERALL STATISTICS
 ------------------------------
 Total Days          : 186.0
-Total GB            : 2346.16
-Avg Daily GB        : 12.61
+Total GB            : 2347.5
+Avg Daily GB        : 12.62
 
 TOP 5 HIGHEST USAGE DAYS
 ------------------------------
@@ -21,7 +21,7 @@ AVERAGE USAGE BY DAY OF WEEK
 Monday    : 13.0 GB
 Tuesday   : 11.98 GB
 Wednesday : 12.36 GB
-Thursday  : 10.84 GB
+Thursday  : 10.89 GB
 Friday    : 12.26 GB
 Saturday  : 13.24 GB
 Sunday    : 14.71 GB
@@ -73,14 +73,14 @@ MONTHLY DATA USAGE REPORT
   Days Recorded:  30
 
 2026-05
-  Total Usage:    337.47 GB
-  Daily Average:  16.07 GB
+  Total Usage:    338.81 GB
+  Daily Average:  16.13 GB
   Peak Day:       45.09 GB
   Lowest Day:     4.95 GB
   Days Recorded:  21
 
 ============================================================
-Grand Total: 2346.16 GB across 7 months
+Grand Total: 2347.5 GB across 7 months
 
 ============================================================
-Report Generated: 2026-05-21 17:19:31
+Report Generated: 2026-05-21 18:05:50

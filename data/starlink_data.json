@@ -727,7 +727,7 @@
             18.105064329
           ],
           [
-            9.968235408
+            11.309200355
           ],
           [
             0
@@ -811,7 +811,7 @@
         "dataUsageSummaryLines": [
           {
             "activeFrom": "2026-05-17T00:00:00+00:00",
-            "consumedAmountGB": 99.02,
+            "consumedAmountGB": 100.36,
             "dataBucketIndex": 0,
             "dataOverageType": 0,
             "description": "",
@@ -831,7 +831,7 @@
         ],
         "endDate": "2026-06-17T00:00:00+00:00",
         "startDate": "2026-05-17T00:00:00+00:00",
-        "totalAmountGB": 99.019703106
+        "totalAmountGB": 100.360668053
       }
     ],
     "dataBuckets": [
