@@ -20,7 +20,7 @@ Double-click **`run_scraper.bat`**
 
 ## How It Works
 
-The scraper attaches to an existing Chrome session via Selenium's remote debugging mode. This approach avoids storing credentials in code — you log in manually, and the scraper piggybacks on your live session.
+The scraper attaches to an existing Chrome session via Selenium's remote debugging mode. This approach avoids storing credentials in code — you log in manually.
 
 ```
 Chrome (logged-in session)
