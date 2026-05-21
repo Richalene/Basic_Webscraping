@@ -1,4 +1,4 @@
-# Starlink
+# Basic Webscraping 
 
 Extracts daily data usage from a Starlink account page and exports it to CSV using Python and pandas.
 
