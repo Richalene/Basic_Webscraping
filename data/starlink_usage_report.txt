@@ -1,0 +1,86 @@
+============================================================
+STARLINK DATA USAGE ANALYSIS REPORT
+============================================================
+
+OVERALL STATISTICS
+------------------------------
+Total Days          : 186.0
+Total GB            : 2346.16
+Avg Daily GB        : 12.61
+
+TOP 5 HIGHEST USAGE DAYS
+------------------------------
+1. 2026-05-17 (Sunday): 45.09 GB
+2. 2025-12-14 (Sunday): 44.74 GB
+3. 2025-12-30 (Tuesday): 35.42 GB
+4. 2026-01-03 (Saturday): 33.69 GB
+5. 2025-12-15 (Monday): 33.21 GB
+
+AVERAGE USAGE BY DAY OF WEEK
+------------------------------
+Monday    : 13.0 GB
+Tuesday   : 11.98 GB
+Wednesday : 12.36 GB
+Thursday  : 10.84 GB
+Friday    : 12.26 GB
+Saturday  : 13.24 GB
+Sunday    : 14.71 GB
+
+============================================================
+MONTHLY DATA USAGE REPORT
+============================================================
+
+2025-11
+  Total Usage:    202.13 GB
+  Daily Average:  14.44 GB
+  Peak Day:       23.19 GB
+  Lowest Day:     6.61 GB
+  Days Recorded:  14
+
+2025-12
+  Total Usage:    590.22 GB
+  Daily Average:  19.04 GB
+  Peak Day:       44.74 GB
+  Lowest Day:     9.75 GB
+  Days Recorded:  31
+
+2026-01
+  Total Usage:    380.36 GB
+  Daily Average:  12.27 GB
+  Peak Day:       33.69 GB
+  Lowest Day:     2.51 GB
+  Days Recorded:  31
+
+2026-02
+  Total Usage:    120.77 GB
+  Daily Average:  4.31 GB
+  Peak Day:       9.12 GB
+  Lowest Day:     0.88 GB
+  Days Recorded:  28
+
+2026-03
+  Total Usage:    197.23 GB
+  Daily Average:  6.36 GB
+  Peak Day:       15.59 GB
+  Lowest Day:     0.9 GB
+  Days Recorded:  31
+
+2026-04
+  Total Usage:    517.98 GB
+  Daily Average:  17.27 GB
+  Peak Day:       33.01 GB
+  Lowest Day:     4.61 GB
+  Days Recorded:  30
+
+2026-05
+  Total Usage:    337.47 GB
+  Daily Average:  16.07 GB
+  Peak Day:       45.09 GB
+  Lowest Day:     4.95 GB
+  Days Recorded:  21
+
+============================================================
+Grand Total: 2346.16 GB across 7 months
+
+============================================================
+Report Generated: 2026-05-21 17:19:31
