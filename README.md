@@ -61,30 +61,11 @@ Chrome (logged in) → Selenium attaches → JS fetch to API → JSON → pandas
 | `starlink_weekly_summary.csv` | Total GB per week |
 | `starlink_monthly_summary.csv` | Monthly totals, averages, min/max |
 | `starlink_usage_report.txt` | Full analysis report |
+| `starlink_raw_export.txt` | Raw data|
  
 ---
  
-## Data Analysis
- 
-The notebook performs the following analysis on the scraped data:
- 
-**Overall statistics**
-- Total days analyzed, total GB used
-- Average, median, max, min daily usage
-- Standard deviation
-**Top 5 highest usage days**
-- Date, day of week, and GB for the 5 heaviest usage days
-**Day of week patterns**
-- Average daily usage broken down by Monday–Sunday
-- Useful for identifying weekly usage habits
-**Weekly summary**
-- Total GB consumed per ISO week across all billing cycles
-- Deduplicated across billing cycle boundaries
-**Monthly report**
-- Per-month breakdown of total, average, peak, and lowest daily usage
-- Days recorded per month
-- Grand total across all months
----
+
  
 ## Output Format
  
